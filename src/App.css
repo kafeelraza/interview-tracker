@@ -1,0 +1,25 @@
+/* ==========================================
+   App Layout Styles
+   ========================================== */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  flex: 1;
+}
+
+.app__tracker-section {
+  padding: var(--space-3xl) 0;
+  padding-top: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .app__tracker-section {
+    padding: var(--space-xl) 0;
+    padding-top: var(--space-lg);
+  }
+}

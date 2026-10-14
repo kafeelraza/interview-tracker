@@ -1,0 +1,104 @@
+.modal-backdrop {
+  position: fixed; inset: 0;
+  z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  background: rgba(10, 14, 24, 0.55);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  width: min(540px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(8, 12, 24, 0.35);
+  animation: modalIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 4px;
+}
+.modal__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.modal__close {
+  display: grid; place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  color: var(--ink-3);
+  transition: background var(--transition-base), color var(--transition-base);
+}
+.modal__close:hover { background: var(--surface-2); color: var(--ink); }
+
+.modal__body { display: grid; gap: 20px; padding: 16px 24px 8px; }
+
+.modal__field { margin: 0; padding: 0; border: 0; min-width: 0; }
+.modal__label { display: block; margin-bottom: 8px; padding: 0; font-size: 0.88rem; font-weight: 600; color: var(--ink-2); }
+.modal__req { color: var(--hard); }
+
+.modal__input {
+  width: 100%;
+  padding: 11px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+.modal__input::placeholder { color: var(--ink-3); }
+.modal__input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); background: var(--surface); }
+.modal__input.has-error { border-color: var(--hard); }
+.modal__textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
+
+.modal__choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.modal__choice {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: border-color var(--transition-base), background var(--transition-base), color var(--transition-base);
+}
+.modal__choice:hover { border-color: var(--line-strong); color: var(--ink); }
+.modal__choice.is-selected { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.modal__choice.is-selected[data-tone='easy'], .modal__choice.is-selected[data-tone='completed'] { background: var(--done-soft); border-color: var(--done); color: var(--done); }
+.modal__choice.is-selected[data-tone='medium'], .modal__choice.is-selected[data-tone='in-progress'] { background: var(--doing-soft); border-color: var(--doing); color: var(--doing); }
+.modal__choice.is-selected[data-tone='hard'] { background: var(--surface-2); border-color: var(--hard); color: var(--hard); }
+.modal__choice.is-selected[data-tone='pending'] { background: var(--todo-soft); border-color: var(--todo); color: var(--ink-2); }
+
+.modal__error { display: block; margin-top: 6px; color: var(--hard); font-size: 0.83rem; }
+
+.modal__footer {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 18px 24px 22px;
+}
+.modal__hint { color: var(--ink-3); font-size: 0.8rem; }
+.modal__buttons { display: flex; gap: 8px; margin-left: auto; }
+.modal__btn { padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 0.92rem; }
+.modal__btn--ghost { color: var(--ink-2); }
+.modal__btn--ghost:hover { background: var(--surface-2); color: var(--ink); }
+.modal__btn--primary { background: var(--ink); color: var(--surface); transition: background var(--transition-base); }
+.modal__btn--primary:hover { background: var(--accent); }
+
+@media (max-width: 560px) {
+  .modal-backdrop { align-items: flex-end; padding: 0; }
+  .modal { width: 100%; border-radius: 18px 18px 0 0; animation-name: sheetIn; }
+  .modal__hint { display: none; }
+  @keyframes sheetIn { from { transform: translateY(100%); } to { transform: none; } }
+}

@@ -1,0 +1,42 @@
+/* ==========================================
+   Footer Component Styles
+   ========================================== */
+
+.footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 32px 0;
+  margin-top: auto;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.footer__text {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.footer__copyright {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--space-xl) 0;
+  }
+
+  .footer__container {
+    padding: 0 var(--space-lg);
+  }
+}

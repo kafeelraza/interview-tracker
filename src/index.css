@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --page-max: 1080px;
+
+  --bg: #FFFDF0;
+  --surface: #FFFFFF;
+  --surface-2: #F8F9FC;
+  --ink: #0E1424;
+  --ink-2: #4A5368;
+  --ink-3: #7A8397;
+  --line: #E2E6EE;
+  --line-strong: #CDD3DF;
+
+  --accent: #D97706;
+  --accent-soft: #FEF3C7;
+
+  --done: #12805C;
+  --done-soft: #DDF3EA;
+  --doing: #B86E00;
+  --doing-soft: #FFEFD0;
+  --todo: #8A93A6;
+  --todo-soft: #F1F4F9;
+
+  --easy: #12805C;
+  --medium: #B86E00;
+  --hard: #C23A3A;
+
+  --font-display: 'Bricolage Grotesque', 'Instrument Sans', system-ui, sans-serif;
+  --font-body: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* compatibility tokens */
+  --color-primary: var(--accent);
+  --color-primary-hover: #B45309;
+  --color-primary-light: var(--accent-soft);
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--surface-2);
+  --color-surface: var(--surface);
+  --color-border: var(--line);
+  --color-border-hover: var(--line-strong);
+  --color-text: var(--ink);
+  --color-text-secondary: var(--ink-2);
+  --color-text-tertiary: var(--ink-3);
+  --radius-sm: 6px;
+  --radius-md: 9px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 3px rgba(14, 20, 36, 0.05);
+  --shadow-md: 0 4px 12px rgba(14, 20, 36, 0.08);
+  --shadow-lg: 0 12px 24px rgba(14, 20, 36, 0.1);
+  --transition-base: 160ms ease;
+  --transition-fast: 120ms ease;
+  --z-sticky: 100;
+  --z-modal-backdrop: 200;
+  --z-modal: 210;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  margin: 0;
+  background: repeating-linear-gradient(
+      -45deg,
+      #FFFDF0,
+      #FEF3C7 10px,
+      #FFFDF0 10px,
+      #FEF3C7 20px
+    );
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, select, textarea { font: inherit; color: inherit; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
