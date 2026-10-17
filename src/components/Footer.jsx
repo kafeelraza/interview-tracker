@@ -8,8 +8,8 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <p className="footer__text">Built with ❤️ for interview prep</p>
-        <p className="footer__copyright">© 2024 PrepTrack</p>
+        <p className="footer__text">Built with ❤️ by Kafeel Raza</p>
+        <p className="footer__copyright">© 2026 PrepTrack • All rights reserved</p>
       </div>
     </footer>
   )

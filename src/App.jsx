@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useLocalStorage } from './hooks/useLocalStorage'
-import { generateId, DEFAULT_QUESTIONS } from './utils/constants'
+import { generateId } from './utils/constants'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Dashboard from './components/Dashboard'
@@ -14,7 +14,7 @@ import './App.css'
  * Manages global application state including questions, filters, modal visibility, and navigation.
  */
 function App() {
-  const [questions, setQuestions] = useLocalStorage('preptrack-questions', DEFAULT_QUESTIONS)
+  const [questions, setQuestions] = useLocalStorage('preptrack_questions_list', [])
   const [activeView, setActiveView] = useState('home')
   const [showModal, setShowModal] = useState(false)
   const [editingQuestion, setEditingQuestion] = useState(null)
@@ -83,12 +83,8 @@ function App() {
     setFilters({ category: '', status: '', difficulty: '' })
   }
 
-  const handleResetDemo = () => {
-    setQuestions(DEFAULT_QUESTIONS)
-  }
-
   const handleClearAll = () => {
-    if (window.confirm('Are you sure you want to clear all questions? You can restore sample questions anytime.')) {
+    if (window.confirm('Are you sure you want to clear all questions?')) {
       setQuestions([])
     }
   }
@@ -140,7 +136,6 @@ function App() {
             onEditQuestion={handleEditQuestion}
             onDeleteQuestion={handleDeleteQuestion}
             onStatusChange={handleStatusChange}
-            onResetDemo={handleResetDemo}
             onClearAll={handleClearAll}
             hasActiveFilters={hasActiveFilters}
           />

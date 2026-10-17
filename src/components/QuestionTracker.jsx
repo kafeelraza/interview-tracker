@@ -20,7 +20,6 @@ function QuestionTracker({
   onEditQuestion,
   onDeleteQuestion,
   onStatusChange,
-  onResetDemo,
   onClearAll,
   hasActiveFilters = false
 }) {
@@ -39,7 +38,7 @@ function QuestionTracker({
         </div>
 
         <div className="question-tracker__actions-group">
-          {allQuestions && allQuestions.length > 0 ? (
+          {allQuestions && allQuestions.length > 0 && (
             <button
               type="button"
               className="question-tracker__secondary-btn"
@@ -47,15 +46,6 @@ function QuestionTracker({
               title="Clear all stored questions"
             >
               Clear All
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="question-tracker__secondary-btn"
-              onClick={onResetDemo}
-              title="Load realistic sample interview questions"
-            >
-              Load Sample Data
             </button>
           )}
 
@@ -102,8 +92,6 @@ function QuestionTracker({
           <EmptyState
             type="no-questions"
             onAddQuestion={onAddQuestion}
-            onSecondaryAction={onResetDemo}
-            secondaryLabel="Load 8 Demo Questions"
           />
         ) : isFilterEmpty ? (
           <EmptyState type="no-results" onAddQuestion={onClearFilters} />
