@@ -82,6 +82,14 @@ function Navbar({ activeView = 'home', onNavigate, questionCount = 0 }) {
               <span className="navbar__badge">{questionCount}</span>
             )}
           </button>
+          <button
+            type="button"
+            className={`navbar__link ${activeView === 'kanban' ? 'navbar__link--active' : ''}`}
+            onClick={() => handleNavClick('kanban')}
+          >
+            <span className="navbar__link-text">📌 Kanban</span>
+            <span className="navbar__stage2-tag">Stage 2</span>
+          </button>
         </nav>
       </div>
     </header>

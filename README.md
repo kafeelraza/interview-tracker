@@ -13,39 +13,22 @@ A responsive, single-page dashboard where students can track their weekly interv
 
 ## ✨ Features
 
-### Dashboard Overview
-- **Total Questions** — count of all tracked questions
-- **DSA Completed** — completed DSA-category problems
-- **Interview Ready** — all completed questions across categories
-- **Machine Coding Status** — progress on machine coding challenges (X/Y format)
-- **Progress Ring** — animated SVG circular progress indicator showing overall completion %
+### 📌 Stage 2 Upgrade: Responsive Kanban Board (Week 2)
+- **3 Dynamic Columns** — `To Do`, `In Progress`, and `Completed` columns with per-column task counters.
+- **HTML5 Drag & Drop** — Smooth card dragging across columns with animated drop-target glow.
+- **Mobile Touch "↔ Move" Menu** — Accessible dropdown on every card so mobile users can transition tasks with 1 tap.
+- **Task CRUD** — Add tasks with validated title, description, priority (`Urgent`, `High`, `Medium`, `Low`), and due date with quick presets (*Today*, *Tomorrow*, *+1 Week*).
+- **Edit & Delete** — Pre-filled edit modal and defensive deletion confirmation modal with preview.
+- **Search & Multi-Filter** — Real-time search by task title/details + Priority dropdown + Status pills.
+- **Due Date Badges** — Dynamic relative status: **"Overdue (2d ago)"**, **"Due Today"**, and upcoming date tags.
+- **Dual LocalStorage Persistence** — Independent LocalStorage key (`preptrack_kanban_tasks_v1`) preserving tasks across reloads.
+- **🧠 Architecture & Viva Guide Modal** — Built directly into the app header with component hierarchy, state flow, key decisions, and a **60-second demo video recording script**.
 
-### Question Tracker
-- ➕ Add questions with **title**, **category** (DSA / Git / Technical / Machine Coding), **difficulty** (Easy / Medium / Hard), **status** (Pending / In Progress / Completed), and optional **notes**
-- ✏️ Edit existing questions inline via modal
-- 🗑️ Delete questions with one click
-- 🔄 Quick status toggle — change status directly from the question card
-
-### Search & Filters
-- 🔍 Real-time search by title or notes
-- 📂 Filter by **category**, **status**, and **difficulty** independently
-- 🧹 Clear all filters with one click
-- Shows filtered count vs. total count
-
-### Data Persistence
-- 💾 All data stored in **LocalStorage** — survives page refresh and browser restart
-- No server, no database, no signup required
-
-### Responsive Design
-- 📱 Fully responsive — desktop, tablet, and mobile layouts
-- Hamburger navigation menu on mobile
-- Grid layout adapts from 2-column to single-column
-
-### Edge Case Handling
-- 📭 **Empty state** — friendly illustration + CTA when no questions exist
-- 🔎 **No results state** — clear message when filters/search return nothing
-- ✅ **Form validation** — required fields with inline error messages
-- ⌨️ **Keyboard support** — Escape closes modals, focus management
+### 📋 Stage 1: Question Practice Tracker (Week 1)
+- **Dashboard Overview** — Total questions, DSA completed, interview ready count, and SVG circular progress ring.
+- **Categorized Question Tracker** — Questions by category (DSA, Git, Technical, Machine Coding), difficulty (Easy, Medium, Hard), and status.
+- **Multi-Filter & Search** — Filter by category, status, and difficulty with clear all filters CTA.
+- **Clean Persistence** — Stored under LocalStorage key `preptrack_questions_list`.
 
 ---
 
